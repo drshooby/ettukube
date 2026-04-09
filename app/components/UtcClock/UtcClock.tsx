@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 
 const formatter = new Intl.DateTimeFormat("en-US", {
-  timeZone: "UTC",
+  timeZone: "America/Los_Angeles",
   hour: "2-digit",
   minute: "2-digit",
   second: "2-digit",
-  hour12: false,
+  hour12: true,
 });
 
 export function UtcClock({ className }: { className?: string }) {
