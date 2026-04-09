@@ -1,0 +1,70 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.title {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.link {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-dim);
+  text-underline-offset: 0.2em;
+}
+
+.link:hover {
+  text-decoration-color: var(--accent);
+}
+
+.description {
+  display: block;
+  margin-top: 0.125rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+}
+
+@media (min-width: 56rem) {
+  .nav {
+    gap: 0.875rem;
+  }
+
+  .title {
+    font-size: 0.8125rem;
+    letter-spacing: 0.07em;
+  }
+
+  .list {
+    gap: 0.625rem;
+  }
+
+  .link {
+    font-size: 0.9375rem;
+  }
+
+  .description {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+}

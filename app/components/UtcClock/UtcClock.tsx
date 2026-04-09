@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const formatter = new Intl.DateTimeFormat("en-GB", {
+const formatter = new Intl.DateTimeFormat("en-US", {
   timeZone: "UTC",
   hour: "2-digit",
   minute: "2-digit",

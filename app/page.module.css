@@ -1,18 +1,76 @@
 .shell {
   flex: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   min-height: 100vh;
   padding: clamp(1.5rem, 4vw, 3.5rem);
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto auto auto;
+  grid-template-areas:
+    "main"
+    "footerLead"
+    "siteNav"
+    "attribution";
 }
 
 .main {
-  flex: 1;
+  grid-area: main;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 0;
   max-width: 38rem;
   gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.siteNav {
+  grid-area: siteNav;
+  margin-top: 1.25rem;
+  max-width: 36rem;
+}
+
+.footerLead {
+  grid-area: footerLead;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 2.5rem;
+  max-width: 36rem;
+}
+
+.attribution {
+  grid-area: attribution;
+  margin: 0;
+  margin-top: 1.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  max-width: 36rem;
+}
+
+@media (min-width: 56rem) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 16rem);
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas:
+      "main siteNav"
+      "footerLead footerLead"
+      "attribution attribution";
+    column-gap: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .siteNav {
+    margin-top: 0;
+    max-width: none;
+    align-self: center;
+  }
+
+  .attribution {
+    margin-top: 0.75rem;
+  }
 }
 
 .epigraph {
@@ -77,15 +135,6 @@
   font-variant-numeric: tabular-nums;
 }
 
-.footer {
-  margin-top: auto;
-  padding-top: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  max-width: 36rem;
-}
-
 .footerMono {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-size: 0.75rem;
@@ -97,17 +146,6 @@
   font-size: 0.8125rem;
   color: var(--muted);
   opacity: 0.85;
-}
-
-.attribution {
-  margin: 0;
-  padding-top: 0.5rem;
-  border-top: 1px solid var(--rule);
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 0.75rem;
-  line-height: 1.55;
-  color: var(--muted);
-  letter-spacing: 0.02em;
 }
 
 .attributionLead {
